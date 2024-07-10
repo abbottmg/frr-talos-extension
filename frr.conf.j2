@@ -1,3 +1,26 @@
+ipv6 forwarding
+!
+router ospf6
+ ospf6 router-id {{IPV4_NODE_NUMBER}}
+ log-adjacency-changes
+ exit
+!
+interface lo
+ ipv6 ospf6 area 0
+ exit
+!
+interface enp68s0f0
+ ipv6 ospf6 area 0
+ ipv6 ospf6 network point-to-point
+ exit
+!
+interface enp68s0f1
+ ipv6 ospf6 area 0
+ ipv6 ospf6 network point-to-point
+ exit
+!
+
+{#
 {%- for n in ports %}
 interface {{n}}
  ipv6 nd ra-interval 10
@@ -58,3 +81,4 @@ ip protocol bgp route-map SETSRC
 line vty
 !
 log syslog debugging
+#}
