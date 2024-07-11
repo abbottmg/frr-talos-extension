@@ -21,7 +21,7 @@ fabricd=no
 # the config via "vtysh -b" when the servers are started.
 # Check /etc/pam.d/frr if you intend to use "vtysh"!
 #
-vtysh_enable=no
+vtysh_enable=yes
 zebra_options=" -n -A 127.0.0.1"
 bgpd_options="   -A 127.0.0.1"
 ospfd_options="  -A 127.0.0.1"
