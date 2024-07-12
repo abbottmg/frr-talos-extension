@@ -22,23 +22,23 @@ fabricd=no
 # Check /etc/pam.d/frr if you intend to use "vtysh"!
 #
 vtysh_enable=yes
-zebra_options=" -n -A 127.0.0.1"
-bgpd_options="   -A 127.0.0.1"
-ospfd_options="  -A 127.0.0.1"
-ospf6d_options=" -A ::1"
-ripd_options="   -A 127.0.0.1"
-ripngd_options=" -A ::1"
-isisd_options="  -A 127.0.0.1"
-pimd_options="  -A 127.0.0.1"
-ldpd_options="  -A 127.0.0.1"
-nhrpd_options="  -A 127.0.0.1"
+zebra_options="-n -A 127.0.0.1"
+bgpd_options="    -A 127.0.0.1"
+ospfd_options="   -A 127.0.0.1"
+ospf6d_options="  -A ::1"
+ripd_options="    -A 127.0.0.1"
+ripngd_options="  -A ::1"
+isisd_options="   -A 127.0.0.1"
+pimd_options="    -A 127.0.0.1"
+ldpd_options="    -A 127.0.0.1"
+nhrpd_options="   -A 127.0.0.1"
 eigrpd_options="  -A 127.0.0.1"
 babeld_options="  -A 127.0.0.1"
 sharpd_options="  -A 127.0.0.1"
-staticd_options="  -A 127.0.0.1"
-pbrd_options="  -A 127.0.0.1"
-bfdd_options="  -A 127.0.0.1"
-fabricd_options="  -A 127.0.0.1"
+staticd_options=" -A 127.0.0.1"
+pbrd_options="    -A 127.0.0.1"
+bfdd_options="    -A 127.0.0.1"
+fabricd_options=" -A 127.0.0.1"
 
 # zebra=true
 # bgpd=true
