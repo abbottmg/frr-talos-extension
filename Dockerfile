@@ -1,5 +1,4 @@
 FROM frrouting/frr:v8.4.1 as base
-COPY env.sh /etc/frr/env.sh
 COPY docker-start.j2 /usr/lib/frr/docker-start.j2
 COPY daemons /etc/frr/daemons
 COPY frr.conf.j2 /etc/frr/frr.conf.j2
