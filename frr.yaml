@@ -1,7 +1,10 @@
 name: frr
 container:
+  depends:
+    configuration: true
+    network:
+    - connectivity
   environment:
-  - IPV4_NODE_NUMBER
   - NODE_IP
   - ASN_LOCAL
   entrypoint: /sbin/tini
