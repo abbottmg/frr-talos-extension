@@ -12,3 +12,4 @@ FROM scratch AS frr
 COPY --from=base / /rootfs/usr/local/lib/containers/frr/
 COPY frr.yaml /rootfs/usr/local/etc/containers/frr.yaml
 COPY manifest.yaml /manifest.yaml
+COPY manifest.json /manifest.json
