@@ -14,16 +14,16 @@ env
 log "echo \$PATH"
 echo $PATH
 
-    log "configs for peering with metallb speaker container on same host"
-    /sbin/ip netns add $NAMESPACE_METALLB || true
-    /sbin/ip link add veth-a type veth peer name veth-b || true
-    /sbin/ip link set veth-a netns $NAMESPACE_METALLB || true
-    /sbin/ip netns exec $NAMESPACE_METALLB /sbin/ip a a $PEER_IP_LOCAL/$PEER_IP_PREFIX dev veth-a || true
-    /sbin/ip a a $PEER_IP_REMOTE/$PEER_IP_PREFIX dev veth-b || true
-    /sbin/ip link set veth-b up || true
-    /sbin/ip link set veth-b mtu $INTERFACE_MTU || true
-    /sbin/ip netns exec $NAMESPACE_METALLB /sbin/ip link set veth-a up || true
-    /sbin/ip netns exec $NAMESPACE_METALLB /sbin/ip link set veth-a mtu $INTERFACE_MTU || true
+# log "configs for peering with metallb speaker container on same host"
+# /sbin/ip netns add $NAMESPACE_METALLB || true
+# /sbin/ip link add veth-a type veth peer name veth-b || true
+# /sbin/ip link set veth-a netns $NAMESPACE_METALLB || true
+# /sbin/ip netns exec $NAMESPACE_METALLB /sbin/ip a a $PEER_IP_LOCAL/$PEER_IP_PREFIX dev veth-a || true
+# /sbin/ip a a $PEER_IP_REMOTE/$PEER_IP_PREFIX dev veth-b || true
+# /sbin/ip link set veth-b up || true
+# /sbin/ip link set veth-b mtu $INTERFACE_MTU || true
+# /sbin/ip netns exec $NAMESPACE_METALLB /sbin/ip link set veth-a up || true
+# /sbin/ip netns exec $NAMESPACE_METALLB /sbin/ip link set veth-a mtu $INTERFACE_MTU || true
 
 # generate ports list
 lshw -class network -json |jq '{"ports": [ .[] |select(has("businfo")) |select(.businfo|test("^pci.")) | .logicalname ]}'   > /ports.json

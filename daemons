@@ -1,5 +1,5 @@
-zebra=no
-bgpd=no
+zebra=yes
+bgpd=yes
 ospfd=no
 ospf6d=yes
 ripd=no
@@ -11,9 +11,9 @@ nhrpd=no
 eigrpd=no
 babeld=no
 sharpd=no
-staticd=no
+staticd=yes
 pbrd=no
-bfdd=no
+bfdd=yes
 fabricd=no
 
 #

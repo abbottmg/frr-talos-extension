@@ -5,7 +5,7 @@ log extended frreal
 ipv6 forwarding
 !
 router ospf6
- ospf6 router-id {{IPV4_NODE_NUMBER}}
+ ospf6 router-id {{NODE_IP}}
  log-adjacency-changes
  exit
 !
@@ -24,7 +24,6 @@ interface enp68s0f1
  exit
 !
 
-{#
 {%- for n in ports %}
 interface {{n}}
  ipv6 nd ra-interval 10
@@ -85,4 +84,3 @@ ip protocol bgp route-map SETSRC
 line vty
 !
 log syslog debugging
-#}
