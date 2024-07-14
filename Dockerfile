@@ -3,6 +3,7 @@ RUN apk add --no-cache --update-cache tcpdump gettext py3-pip curl lldpd iputils
 RUN pip3 install j2cli
 # COPY docker-start.j2 /usr/lib/frr/docker-start.j2
 COPY docker-start.j2 /usr/lib/frr/docker-start
+RUN chmod +x /usr/lib/frr/docker-start
 COPY daemons /etc/frr/daemons
 COPY frr.conf.j2 /etc/frr/frr.conf.j2
 # RUN j2 -o /usr/lib/frr/docker-start /usr/lib/frr/docker-start.j2
