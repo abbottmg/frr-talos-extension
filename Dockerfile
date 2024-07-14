@@ -15,4 +15,4 @@ COPY --from=base /usr /rootfs/usr/local/lib/containers/frr/usr
 COPY --from=base /bin /rootfs/usr/local/lib/containers/frr/usr/local/bin
 COPY --from=base /sbin /rootfs/usr/local/lib/containers/frr/usr/local/sbin
 COPY manifest.yaml /manifest.yaml
-COPY manifest.json /manifest.json
+#COPY manifest.json /manifest.json
