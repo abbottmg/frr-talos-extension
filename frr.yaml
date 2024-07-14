@@ -1,9 +1,9 @@
 name: frr
 container:
   environment:
-  - IPV4_NODE_NUMBER=$IPV4_NODE_NUMBER
-  - NODE_IP=$NODE_IP
-  - ASN_LOCAL=$ASN_LOCAL
+  - IPV4_NODE_NUMBER
+  - NODE_IP
+  - ASN_LOCAL
   entrypoint: /sbin/tini
   args:
   - --
