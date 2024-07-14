@@ -5,8 +5,14 @@ container:
     network:
     - connectivity
   environment:
-  - NODE_IP
-  - ASN_LOCAL
+  - ASN_METALLB_LOCAL=4200099998
+  - ASN_METALLB_REMOTE=4200099999
+  - NAMESPACE_METALLB=metallb
+  - PEER_IP_LOCAL=192.168.250.254
+  - PEER_IP_REMOTE=192.168.250.255
+  - PEER_IP_PREFIX=31
+  - PEER_V6ONLY=yes
+  - INTERFACE_MTU=1500
   entrypoint: /sbin/tini
   args:
   - --
