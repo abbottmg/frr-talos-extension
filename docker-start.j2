@@ -68,10 +68,10 @@ do
 sleep_time=60
 
 if [ $count -lt 5 ];then
-    log "vtysh -c 'show ip ospf vrf all'"
-    vtysh -c "show ip ospf vrf all" || true
-    vtysh -c "show ip ospf vrf all" || true
-    vtysh -c "show ip ospf vrf database" || true
+    log "vtysh -c 'show ipv6 ospf6 vrf all'"
+    vtysh -c "show ipv6 ospf6 vrf all" || true
+    vtysh -c "show ipv6 route ospf6" || true
+    vtysh -c "show ipv6 ospf6 vrf database" || true
 
     log "vtysh -c 'show bgp vrf all summary'"
     vtysh -c "show bgp vrf all summary wide" || true
