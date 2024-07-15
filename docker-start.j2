@@ -41,9 +41,9 @@ cat /etc/frr/frr.conf
 
 chown -R frr:frr /etc/frr || true
 
-#enable syslogd based logging
-log "syslogd -n -O - &"
-syslogd -n -O - &
+# enable syslogd based logging
+# log "syslogd -n -O - &"
+# syslogd -n -O - &
 
 log "starting frr..."
 /usr/lib/frr/frrinit.sh start
@@ -68,6 +68,11 @@ do
 sleep_time=60
 
 if [ $count -lt 5 ];then
+    log "vtysh -c 'show ip ospf vrf all'"
+    vtysh -c "show ip ospf vrf all" || true
+    vtysh -c "show ip ospf vrf all" || true
+    vtysh -c "show ip ospf vrf database" || true
+
     log "vtysh -c 'show bgp vrf all summary'"
     vtysh -c "show bgp vrf all summary wide" || true
 
