@@ -1,6 +1,7 @@
 name: frr
 container:
-  #environment:
+  environment:
+  - NODE_IP
   #- ASN_METALLB_LOCAL=4200099998
   #- ASN_METALLB_REMOTE=4200099999
   #- NAMESPACE_METALLB=metallb
